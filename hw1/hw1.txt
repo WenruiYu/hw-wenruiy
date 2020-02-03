@@ -1,0 +1,38 @@
+1.
+(a)
+(b)
+(c)
+(d)
+
+2.
+(a)
+(b)
+1. git add hw1q2b.cpp
+2. git log -n 3
+(c)
+In interactive mode, enter the commit message.
+
+3.
+1. yes
+2. yes
+3. no
+
+4.
+1.Because don't need to access square's member variables.
+2. Board
+
+5.
+(a)
+Rational
+Rational
+Record
+(b)
+Copy Rational
+Copy Rational
+Record
+(c)
+Wrapper::Wrapper(const Rational& major, const Rational& overall) : r(major,overall) 
+{
+
+}
+
