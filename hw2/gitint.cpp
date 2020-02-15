@@ -313,11 +313,6 @@ std::map<std::string, int> GitInt::diff_helper(std::map<std::string, int> files1
             diffs[pair.first] = files2[pair.first];
         }
     }
-    for(pair<string,int> pair : files1) {
-        if(files2.find(pair.first) == files2.end()) {
-            diffs[pair.first] = -files1[pair.first];
-        }
-    }
     return diffs;
 }
 
