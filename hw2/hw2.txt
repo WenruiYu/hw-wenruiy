@@ -1,0 +1,59 @@
+1. 没有访问权限做不了
+
+2. 
+(1) a list of strings, list supports the random access feature, so it can find the corresponding name directly from the track number
+(2) a list of strings, list can be kept in storage order
+(3) map<string, string>,  The file extension and program name are both strings, and the corresponding program can be quickly found through map
+(4) a set of strings, Because the station name is a string and cannot be repeated.
+
+
+3.
+(a)
+Θ(n*sqrt(n))
+
+f(n) = n + (n-sqrt(n)) + (n-2*sqrt(n)) + (n-3*sqrt(n)) + ... + (n-sqrt(n)*sqrt(n))    {total sqrt(n) items}
+     = n*sqrt(n) - (1+2+3+...+sqrt(n))*sqrt(n)
+	 = n*sqrt(n) - (1+sqrt(n))*n/2
+	 = n*sqrt(n)/2  (n->∞)      
+then Θ(n*sqrt(n))
+
+(b)
+Θ(n*logn)
+
+most inner loop : logn
+Execute the inner loop n times at most, because the contents of the A array are fixed.
+then Θ(n*logn)
+(c)
+Θ(n*logn)
+when x = 2^31-1, cause worst case.
+  for(int i=1; i <= n; i++){ // n*logn
+      t1.insert(std::make_pair(i, v1 ) );
+  }
+  
+  for(int i=1; i <= n; i++){ O(nlogn)
+    int x;
+    cin >> x;
+    std::map<int, std::vector<int> >::iterator it;
+    it = t1.find( x ); // logn
+    if( it == t1.end() ){ // worst case : x = 2^31-1
+
+      int k = 1 + (x % n);
+      while(k >= 1){  // O(logn)
+        t1[k].push_back(x); // O(logn)
+        k /= 2;
+      }
+    }
+    else {
+      v1.push_back(x); // O(1)
+    }
+  }
+(d)
+Θ(n)
+
+10+15+22.5+22.5*1.5+...+n (total log1.5(n)) = 20*(n-1)
+then Θ(n)
+
+4.
+
+
+
